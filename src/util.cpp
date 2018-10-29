@@ -1,5 +1,4 @@
-
-#include <util.h>
+#include "util.h"
 
 void cv_mat_tobyte(cv::Mat &img, BYTE *&image_buff) {
     if (image_buff) {

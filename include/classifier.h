@@ -1,3 +1,15 @@
+/*************************************************************************
+ *
+ * Copyright (c) 2018 Administrator. All Rights Reserved
+ *
+ ************************************************************************/
+
+/*
+ * @file classifier.h
+ * @author gmlyytt@outlook.com
+ * @date 2018/10/26 16:32:00
+ * @brief
+ * */
 #ifndef _CLASSIFIER_H
 #define _CLASSIFIER_H
 

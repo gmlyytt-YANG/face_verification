@@ -1,3 +1,15 @@
+/*************************************************************************
+ *
+ * Copyright (c) 2018 Administrator. All Rights Reserved
+ *
+ ************************************************************************/
+
+/*
+ * @file util.h
+ * @author gmlyytt@outlook.com
+ * @date 2018/10/27 16:32:00
+ * @brief
+ * */
 #ifndef FACE_VERIFICATION_UTIL_H
 #define FACE_VERIFICATION_UTIL_H
 
@@ -11,6 +23,7 @@
 #include <iosfwd>
 #include <memory>
 #include <string>
+#include <sstream>
 #include <utility>
 #include <vector>
 
@@ -20,12 +33,14 @@ using std::string;
 typedef unsigned char BYTE;
 typedef long long LONG;
 
-enum ErrorState{
+enum ErrorState {
     NULLPTR = 1,
     INVALIDINPUT = 2,
     NORMAL = 3,
     FILEERROR = 4
 };
+
+const double eps = 1e-12;
 
 void cv_mat_tobyte(cv::Mat &img, BYTE *&image_buff);
 
