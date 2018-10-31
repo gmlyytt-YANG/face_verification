@@ -26,8 +26,6 @@ FRCreateTemplateF(BYTE *pbImageBuff, int width, int height, int img_type, const 
 		for (auto& sub_elem : elem) {
         	fout << sub_elem << std::endl;
 		}
-    }
-    fout << std::endl;
     fout.close();
     return NORMAL;
 }
@@ -70,4 +68,8 @@ extern "C" LONG FRTemplateMatch(const char *pcTemplateFileA, const char *pcTempl
     }
     *pfSim = static_cast<float>(feature_numerator / (sqrt(feature_A_square_sum) * sqrt(feature_B_square_sum) + eps));
     return NORMAL;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 76df2c2bea3187bd39a3497e65c45a2abc4ceaba
