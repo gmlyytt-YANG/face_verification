@@ -46,4 +46,6 @@ void cv_mat_tobyte(cv::Mat &img, BYTE *&image_buff);
 
 void byte_to_cvmat(BYTE *image_buff, int width, int height, cv::Mat &img, int img_type);
 
+void prepare_img(std::vector<cv::Mat>& crop_imgs, const cv::Mat &img, const int img_width, const int crop_size);
+
 #endif //FACE_VERIFICATION_UTIL_H
