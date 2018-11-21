@@ -1,2 +1,7 @@
 .idea/
-release/cmake-build/CMake*
+release/cmake-build/*
+build/cmake-build/*
+
+./build/data/*
+./release/data/*
+*/config/*
