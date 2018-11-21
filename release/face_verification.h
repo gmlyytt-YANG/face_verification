@@ -70,4 +70,8 @@ extern "C" LONG FRCreateTemplateF(BYTE *pbImageBuff, int width, int height, int 
  */
 extern "C" LONG FRTemplateMatch(const char *pcTemplateFileA, const char *pcTemplateFileB, float *pfSim);
 
+void cv_mat_tobyte(cv::Mat &img, BYTE *&image_buff);
+void byte_to_cvmat(BYTE *image_buff, int width, int height, cv::Mat &img, int img_type);
+
+
 #endif //FACE_VERIFICATION_FACE_VERIFICATION_H
