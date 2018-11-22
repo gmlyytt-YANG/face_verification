@@ -18,15 +18,16 @@ else()
     MESSAGE(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 endif()
 
-SET(CAFFE_GLOG_DIR /usr/local/lib)
-SET(BOOST_SYSTEM_PROTOBUF_DIR /usr/lib/x86_64-linux-gnu)
 
-FIND_PACKAGE(OpenCV REQUIRED)
+SET(src face_verification.cpp)
+SET(hdrs include/face_verification.h)
 
-INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(include)
 INCLUDE_DIRECTORIES(/usr/local/cuda/include)
 
-ADD_EXECUTABLE(face_verification main.cpp face_verification.h face_verification.cpp)
+LINK_DIRECTORIES(lib_base)
 
-LINK_DIRECTORIES(${CAFFE_GLOG_DIR} ${BOOST_SYSTEM_PROTOBUF_DIR} ${OpenCV_LIBRARY_DIRS})
-TARGET_LINK_LIBRARIES(face_verification caffe glog boost_system pthread protobuf ${OpenCV_LIBS})
+ADD_EXECUTABLE(face_verification main.cpp face_verification.cpp)
+
+TARGET_LINK_LIBRARIES(face_verification caffe glog boost_system pthread protobuf opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs)
+ADD_LIBRARY(fv SHARED ${src} ${hdrs})

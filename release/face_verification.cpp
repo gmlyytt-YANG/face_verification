@@ -239,8 +239,8 @@ FRCreateTemplateF(BYTE *pbImageBuff, int width, int height, int img_type, const 
     cv::Mat img;
     byte_to_cvmat(pbImageBuff, width, height, img, img_type);
     string model_file = "../config/deploy.prototxt";
-    string trained_file = "../config/_iter_48800.caffemodel";
-    string mean_file = "../config/face_data_mean.binaryproto";
+    string trained_file = "../config/param.caffemodel";
+    string mean_file = "../config/mean.binaryproto";
     Classifier *classifier = Classifier::InitClassifier(model_file, trained_file, mean_file);
     std::vector <std::vector<float>> feature = classifier->Predict(img);
     for (auto &elem : feature) {

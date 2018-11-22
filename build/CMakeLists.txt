@@ -28,7 +28,7 @@ INCLUDE_DIRECTORIES(/usr/local/cuda/include)
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
 
 AUX_SOURCE_DIRECTORY(src DIR_SRCS)
-ADD_EXECUTABLE(face_verification ${DIR_SRCS} src/main.cpp include/classifier.h src/classifier.cpp include/util.h src/util.cpp include/feature_operation.h src/feature_operation.cpp)
+ADD_EXECUTABLE(face_verification src/main.cpp include/classifier.h src/classifier.cpp include/util.h src/util.cpp include/feature_operation.h src/feature_operation.cpp)
 
 LINK_DIRECTORIES(${CAFFE_GLOG_DIR} ${BOOST_SYSTEM_PROTOBUF_DIR} ${OpenCV_LIBRARY_DIRS})
 TARGET_LINK_LIBRARIES(face_verification caffe glog boost_system pthread protobuf ${OpenCV_LIBS})
