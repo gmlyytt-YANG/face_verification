@@ -1,6 +1,9 @@
 .idea/
 release/cmake-build/*
 build/cmake-build/*
+public
+release/lib_base/
+release/include/
 
 ./build/data/*
 ./release/data/*
